@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event RSVP Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="web3.min.js"></script>  <!-- Web3.js for interacting with Ethereum -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Local Event RSVP Tracker</h1>
+
+        <!-- Create Event Form -->
+        <div class="section">
+            <h2>Create Event</h2>
+            <input type="text" id="eventName" placeholder="Event Name">
+            <input type="text" id="eventDescription" placeholder="Description">
+            <input type="datetime-local" id="eventDate">
+            <input type="number" id="ticketPrice" placeholder="Ticket Price (ETH)">
+            <input type="number" id="totalTickets" placeholder="Total Tickets">
+            <button onclick="createEvent()">Create Event</button>
+        </div>
+
+        <!-- Buy Ticket Section -->
+        <div class="section">
+            <h2>Buy Ticket</h2>
+            <input type="number" id="eventIdBuy" placeholder="Event ID">
+            <input type="number" id="ticketQuantity" placeholder="Number of Tickets">
+            <button onclick="buyTicket()">Buy Ticket</button>
+        </div>
+
+        <!-- View Events -->
+        <div class="section">
+            <h2>Available Events</h2>
+            <button onclick="fetchEvents()">Load Events</button>
+            <div id="eventsList"></div>
+        </div>
+    </div>
+</body>
+</html>
